@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dec470b0-fed6-46e5-be53-ec85fadc01be/b3997a29-3506-4fa5-9a54-57b967b1990a.webp) no-repeat center center;
+    background-image:url("./image/back.jpg");
     background-size: cover;
     height: 100vh;
 }

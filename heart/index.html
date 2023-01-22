@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "htt`://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,9 @@
 <body>
     
     <!-- 这里替换音乐 -->
-    <audio preload autoplay loop controls id="bgmusic">
-        <source src="./music/love.mp3" type="audio/mpeg">
-    </audio>
+    <audio src="./lovexf.mp3" autoplay="autoplay" loop="loop" controls="controls" id="audio"></audio>
 
     <script src="./jweixin-1.0.0.js"></script>
-
     <script>
         function autoPlayAudio1() {
             wx.config({
@@ -31,11 +28,12 @@
                 jsApiList: []
             });
             wx.ready(function () {
-                document.getElementById('bgmusic').play();
+                document.getElementById('audio').play();
             });
         }
         autoPlayAudio1();
     </script>
+    
 
     <canvas id="love"></canvas>
     <script src="script.js"></script>
@@ -61,18 +59,19 @@
     })();
     </script>
 
-    <script type="text/javascript">
-        window.onload = function () {
-            setInterval("toggleSound()", 100);
-        }
-    
-        function toggleSound() {
-            var music = document.getElementById("bgmusic");//获取ID  
-    
-            if (music.paused) { //判读是否播放  
-                music.paused = false;
-                music.play(); //没有就播放 
-            }
-        }
-    </script>
 </html>
+
+<script type="text/javascript">
+    window.onload = function () {
+        setInterval("toggleSound()", 100);
+    }
+
+    function toggleSound() {
+        var music = document.getElementById("audio");//获取ID  
+
+        if (music.paused) { //判读是否播放  
+            music.paused = false;
+            music.play(); //没有就播放 
+        }
+    }
+</script>
