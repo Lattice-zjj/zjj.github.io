@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老爸生日快乐</title>
+    <meta name="keywords" content="生日快乐">
+    <meta name="description" content="生日快乐~">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <!-- 这里替换音乐 -->
+    <audio preload autoplay loop controls id="bgmusic">
+        <source src="./music/love.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./jweixin-1.0.0.js"></script>
+
+    <script>
+        function autoPlayAudio1() {
+            wx.config({
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function () {
+                document.getElementById('bgmusic').play();
+            });
+        }
+        autoPlayAudio1();
+    </script>
+
+    <canvas id="love"></canvas>
+    <script src="script.js"></script>
+    <script src="./love.click.js"></script>
+</body>
+<script>
+
+
+(function () {
+    let input = document.getElementById("input")
+    var inputValue = '老爸生日快乐！';
+    window.location.href = './var.html?name=' + inputValue;
+})()
+
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c86d6693de25dbc83f5b35458e469aa0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            setInterval("toggleSound()", 100);
+        }
+    
+        function toggleSound() {
+            var music = document.getElementById("bgmusic");//获取ID  
+    
+            if (music.paused) { //判读是否播放  
+                music.paused = false;
+                music.play(); //没有就播放 
+            }
+        }
+    </script>
+</html>
