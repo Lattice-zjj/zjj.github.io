@@ -14,6 +14,7 @@
     <script type="text/javascript" src="./css/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./css/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./css/love.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./css/jweixin-1.0.0.js"></script>
     <style type="text/css">
         <!--
         .STYLE1 {
@@ -27,6 +28,24 @@
     <audio preload autoplay loop id="vd">
         <source src="./music/love.mp3" type="audio/mpeg">
     </audio>
+    <audio id="audio-player" autoplay="false" preload="metadata"></audio>
+
+    <script type="application/javascript">
+        Window.onload = function () {
+            autoPlayAudio();
+        }
+        function autoPlayAudio() {
+            var audioPlay = document.getElementById("audio-player");
+            Wx.config({
+                //配置信息，可无
+            });
+            wx.ready(function () {
+                audioPlay.src = "./music/love.mp3";
+                audioPlay.play();
+            });
+        }
+    </script>
+
     <div id="main">
         <div id="wrap">
             <div id="text">
@@ -185,7 +204,7 @@
             }));
 
             var textAnimate = eval(Jscex.compile("async", function () {
-                
+
 
                 $("#code").show().typewriter();
                 $("#clock-box").fadeIn(1);
@@ -194,7 +213,7 @@
                 }
             }));
 
-            
+
 
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
@@ -208,7 +227,7 @@
 
             }));
 
-            
+
 
             runAsync().start();
         })();
