@@ -14,7 +14,6 @@
     <script type="text/javascript" src="./css/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./css/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./css/love.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./css/jweixin-1.0.0.js"></script>
     <style type="text/css">
         <!--
         .STYLE1 {
@@ -29,6 +28,23 @@
         <source src="./music/love.mp3" type="audio/mpeg">
     </audio>
 
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+    function autoPlayAudio1() {
+        wx.config({
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('audio').play();
+        });
+    }
+    autoPlayAudio1();
+    </script>
     
 
     <div id="main">
@@ -237,21 +253,3 @@
     }
 </script>
 
-<script type="text/javascript">
-    window.onload = function () {
-        setInterval("autoPlayAudio1()", 100);
-    }
-    function autoPlayAudio1() {
-        wx.config({
-            debug: false,
-            appId: '',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function() {
-            document.getElementById('audio').play();
-        });
-    }
-</script>
