@@ -241,7 +241,7 @@
     window.onload = function () {
         setInterval("autoPlayAudio1()", 100);
     }
-    (function autoPlayAudio1() {
+    function autoPlayAudio1() {
         wx.config({
             debug: false,
             appId: '',
@@ -253,5 +253,5 @@
         wx.ready(function() {
             document.getElementById('audio').play();
         });
-    })()
+    }
 </script>
