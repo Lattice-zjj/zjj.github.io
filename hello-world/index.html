@@ -30,12 +30,11 @@
     </audio>
 
     <script type="application/javascript">
-        Window.onload = function () {
-            autoPlayAudio();
+        window.onload = function () {
+            setInterval("autoPlayAudio1()", 100);
         }
-        (function autoPlayAudio() {
+        (function autoPlayAudio1() {
             wx.config({
-                // 配置信息, 即使不正确也能使用 wx.ready
                 debug: false,
                 appId: '',
                 timestamp: 1,
