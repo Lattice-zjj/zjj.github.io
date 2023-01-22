@@ -24,28 +24,28 @@
 </head>
 
 <body>
-    <audio preload autoplay loop id="vd">
+    <audio preload autoplay loop controls id="bgmusic">
         <source src="./music/love.mp3" type="audio/mpeg">
     </audio>
 
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
-    function autoPlayAudio1() {
-        wx.config({
-            debug: false,
-            appId: '',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function() {
-            document.getElementById('audio').play();
-        });
-    }
-    autoPlayAudio1();
+        function autoPlayAudio1() {
+            wx.config({
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function () {
+                document.getElementById('bgmusic').play();
+            });
+        }
+        autoPlayAudio1();
     </script>
-    
+
 
     <div id="main">
         <div id="wrap">
@@ -252,4 +252,3 @@
         }
     }
 </script>
-
