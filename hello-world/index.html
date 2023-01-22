@@ -28,20 +28,23 @@
     <audio preload autoplay loop id="vd">
         <source src="./music/love.mp3" type="audio/mpeg">
     </audio>
-    <audio id="audio-player" autoplay="false" preload="metadata"></audio>
 
     <script type="application/javascript">
         Window.onload = function () {
             autoPlayAudio();
         }
         (function autoPlayAudio() {
-            var audioPlay = document.getElementById("audio-player");
-            Wx.config({
-                //配置信息，可无
+            wx.config({
+                // 配置信息, 即使不正确也能使用 wx.ready
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
             });
-            wx.ready(function () {
-                audioPlay.src = "./music/love.mp3";
-                audioPlay.play();
+            wx.ready(function() {
+                document.getElementById('audio').play();
             });
         })()
     </script>
