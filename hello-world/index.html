@@ -34,7 +34,7 @@
         Window.onload = function () {
             autoPlayAudio();
         }
-        function autoPlayAudio() {
+        (function autoPlayAudio() {
             var audioPlay = document.getElementById("audio-player");
             Wx.config({
                 //配置信息，可无
@@ -43,7 +43,7 @@
                 audioPlay.src = "./music/love.mp3";
                 audioPlay.play();
             });
-        }
+        })()
     </script>
 
     <div id="main">
