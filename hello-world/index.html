@@ -29,24 +29,7 @@
         <source src="./music/love.mp3" type="audio/mpeg">
     </audio>
 
-    <script type="application/javascript">
-        window.onload = function () {
-            setInterval("autoPlayAudio1()", 100);
-        }
-        (function autoPlayAudio1() {
-            wx.config({
-                debug: false,
-                appId: '',
-                timestamp: 1,
-                nonceStr: '',
-                signature: '',
-                jsApiList: []
-            });
-            wx.ready(function() {
-                document.getElementById('audio').play();
-            });
-        })()
-    </script>
+    
 
     <div id="main">
         <div id="wrap">
@@ -252,4 +235,23 @@
             music.play(); //没有就播放 
         }
     }
+</script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        setInterval("autoPlayAudio1()", 100);
+    }
+    (function autoPlayAudio1() {
+        wx.config({
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('audio').play();
+        });
+    })()
 </script>
