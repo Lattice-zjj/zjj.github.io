@@ -163,18 +163,18 @@
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
     	    ctx.lineTo(15, 15);
-    	    ctx.lineTo(60, 15);
+    	    ctx.lineTo(100, 15);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Come Baby", 23, 10);
+            ctx.fillText("点击这里，生日快乐！", 23, 10);
             ctx.restore();
         },
         clear: function() {
             var ctx = this.tree.ctx, cirle = this.cirle;
-            var point = cirle.point, scale = cirle.scale, radius = 26;
+            var point = cirle.point, scale = cirle.scale, radius = 36;
             var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
         },
@@ -346,8 +346,8 @@
         createBloom: function(width, height, radius, figure, color, alpha, angle, scale, place, speed) {
             var x, y;
             while (true) {
-                x = random(20, width - 20);
-                y = random(20, height - 20);
+                x = random(0, width - 20);
+                y = random(0, height - 20);
                 if (inheart(x - width / 2, height - (height - 40) / 2 - y, radius)) {
                     return new Bloom(this, new Point(x, y), figure, color, alpha, angle, scale, place, speed);
                 }
@@ -471,7 +471,7 @@
     Bloom = function(tree, point, figure, color, alpha, angle, scale, place, speed) {
         this.tree = tree;
         this.point = point;
-        this.color = color || 'rgb(255,' + random(0, 255) + ',' + random(0, 255) + ')';
+        this.color = color || 'rgb(' + random(140, 255) + ',' + random(0, 255) + ',' + random(0, 255) + ')';
         this.alpha = alpha || random(0.3, 1);
         this.angle = angle || random(0, 360);
         this.scale = scale || 0.1;
